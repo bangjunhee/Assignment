@@ -1,4 +1,4 @@
-open class Lv3Calculator(
+class Lv3Calculator(
     private val addOperation: Lv3AddOperation,
     private val subsOperation: Lv3SubstractOperation,
     private val multiOperation: Lv3MultiplyOperation,
