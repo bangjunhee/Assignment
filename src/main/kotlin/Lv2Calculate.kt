@@ -1,4 +1,4 @@
-class Lv1Calculate(val num1: Int, val num2: Int) {
+class Lv2Calculate(val num1: Int, val num2: Int) {
     fun addNum() {
         val sumNum = num1+num2
         println("$num1 + $num2 = $sumNum")
@@ -14,5 +14,9 @@ class Lv1Calculate(val num1: Int, val num2: Int) {
     fun divNum() {
         val divNum = num1.toFloat()/num2
         println("$num1 / $num2 = $divNum")
+    }
+    fun remainderNum() {
+        val remainderNum = num1 % num2
+        println("$num1 % $num2 = $remainderNum")
     }
 }
