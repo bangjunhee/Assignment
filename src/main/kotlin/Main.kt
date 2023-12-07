@@ -58,17 +58,37 @@ fun main() {
             return
         }
     }
+
+    fun lv4(num1: Int, num2: Int){
+        var lv4class = Lv4Calculate()
+        var abstractclass: Lv4AbstractOperation ?= null
+        print("Choose operator(+, -, *, /): ")
+        var operator: String = readln()
+        when(operator){
+            "+" -> abstractclass = Lv4AddOperation()
+            "-" -> abstractclass = Lv4SubstractOperation()
+            "*" -> abstractclass = Lv4MultiflyOperation()
+            "/" -> abstractclass = Lv4DivideOperation()
+            else -> println("Wrong Operator.")
+        }
+        if (abstractclass != null) {
+            lv4class.operation = abstractclass
+            println("$num1 $operator $num2 = ${lv4class.operate(num1, num2)}")
+        }
+    }
+
+    print("Choose level (1 ~ 4, 0 is exit): ")
+    var choice = readln().toInt()
     print("num1: ")
     var num1 = readln().toInt()
     print("num2: ")
     var num2 = readln().toInt()
-    print("Choose level (1 ~ 4, 0 is exit): ")
-    var choice = readln().toInt()
 
     when (choice) {
         1 -> lv1(num1, num2)
         2 -> lv2(num1, num2)
         3 -> lv3(num1, num2)
+        4 -> lv4(num1, num2)
         0 -> return
         else -> print("wrong choice.")
     }
